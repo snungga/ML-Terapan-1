@@ -2,11 +2,12 @@
 
 ## 1. Domain Proyek
 
-Proyek machine learning ini bertujuan untuk melihat seberapa berpengaruh track record dari hasil pertandingan dari tahun 1872-2022
+Proyek machine learning ini bertujuan untuk melihat seberapa berpengaruh track record dari hasil pertandingan dari tahun 1872-2022.Perkiraan saat ini, yang mencakup pasar ilegal dan pasar legal, menunjukkan industri taruhan pertandingan olahraga bernilai antara $700 miliar dan $1 triliun (£435 miliar hingga £625 miliar) per tahun [1].
+
 - Tujuan dari ini adalah memprediksi suatu match seperti berlangsungnya pertandingan piala dunia (FIFA World Cup)
 
 ## 2. Business Understanding
-Dengan mempertimbangkan match ataupun sejarah pertemuan dalam pertandingan antar negara dapat menentukan suatu "Big Match" berdasarkan home &away score.
+Dengan mempertimbangkan match ataupun sejarah pertemuan dalam pertandingan antar negara dapat menentukan suatu "Big Match" berdasarkan home &away score. Dengan mempertimbangkan seperti itu kita dapat menebak para orang yang berkuasa dalam bandar judi bertaruh kepada siapa dalam suatu macth tersebut.
 
 ### 2.1. Problem Statements
 Poin-poin masalah yang terdapat dalam penetuan suatu match antara lain:
@@ -15,7 +16,7 @@ Poin-poin masalah yang terdapat dalam penetuan suatu match antara lain:
 
 ### 2.2. Goals
 Tujuan dari implementasi solusi machine learning ini antara lain:
-- Dengan melihat track record suatu match, dapat memutuskan negara mana akan yang memenangkan Major Tropy tanpa mempertimbangkan aspek lain seperti xG Goals, pemain yang cidera dsbnya.
+- Dengan melihat track record suatu match, dapat memutuskan negara mana akan yang memenangkan Major Tropy tanpa mempertimbangkan aspek lain seperti xG Goals, pemain yang cidera dsbnya. [2]
 - Membuat algoritma yang dapat memprediksi cepat tim mana yang menang dan kalah ataupun draw yang dapat membantu prediksi match berlangsung
 
 ### 2.3. Solution specifications
@@ -72,7 +73,7 @@ Tujuan dari implementasi solusi machine learning ini antara lain:
           
           
 ## 3. Data Understanding
-Data yang dipakai bersumber dari [kaggle](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017)
+Data yang dipakai bersumber dari [kaggle](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017) dengan banyaknya data sebanyak 44k dengan 9 variabel
 
 ### 3.1. Variabel-variabel pada Dataset adalah sebagai berikut:
 Berdasarkan informasi dari dataset tersebut hasil pertandingan bola dri tahun 1872-2022 (hingga piala dunia berlangsung) sebagai berikut :
@@ -140,7 +141,7 @@ Berdasarkan informasi dari dataset tersebut hasil pertandingan bola dri tahun 18
 
 ### 3.2. EDA (Exploration Data Analysis)
 
-|[<img src="/image/1.png"/>](/image/1.png)|
+|![1](https://user-images.githubusercontent.com/84785750/205471565-0fe1c988-aba1-4b0e-bd59-47dac6ac42e7.png)|
 |:--:| 
 | *Gambar 1. Box Plot home dan away score.* |
 
@@ -159,19 +160,19 @@ Target analisis ini adalah menggunakan home dan away score mulai dari tahun 1872
 |8|1878-03-02|Scotland|England|7.0|2.0|Friendly|Glasgow|Scotland|False|Win|
 |9|1878-03-23|Scotland|Wales|9.0|0.0|Friendly|Glasgow|Scotland|False|Win|
 
-|[<img src="/image/2.png"/>](/image/2.png)|
+|![2](https://user-images.githubusercontent.com/84785750/205471582-9606602c-a1de-4c35-acb3-539910e9247b.png)|
 |:--:| 
 | *Gambar 2. Tipe Match paling banyak.* |
 
 Berdasarkan data tersebut, pertandingan  persahabatan mendominasi berdasarkan aturan FIFA dalam pemeringkatan negara bahwa pertangdingan persahabatan faktor pengali lebih kecil dibandingkan dengan major tournament dengan merujuk pada [ini](https://id.wikipedia.org/wiki/Peringkat_Dunia_FIFA). Dengan demikian untuk dataset pertandingan persahabatan akan dihilangkan dengan lebih menitik beratkan pada Major Tournament.
 
-|[<img src="/image/3.png"/>](/image/3.png)|
+|![3](https://user-images.githubusercontent.com/84785750/205471609-bfe02e6f-530f-4431-9884-0926310d8a0b.png)|
 |:--:| 
 | *Gambar 3. Negara dengan match paling banyak.* |
 
 Dengan gambar tersebut, sebagai pertimbangan prediksi apakah mempengaruh atau tidak dengan banyaknya pertandingan pada saat prediksi suatu negara. 
 
-|[<img src="/image/4.png"/>](/image/4.png)|
+|![4](https://user-images.githubusercontent.com/84785750/205471620-808b8ef6-1b34-43dd-9caa-f185ada224bb.png))|
 |:--:| 
 | *Gambar 4. Histogram frekuensi pertandingan.* |
 
@@ -269,7 +270,7 @@ Kelebihan algoritma Random Forest adalah menggunakan teknik Bagging yang berusah
    Oleh karena itu, perlu mencoba beberapa nilai k yang berbeda (1 sampai 20) kemudian membandingan mana yang menghasilkan nilai metrik model (pada kasus ini memakai mean squared error) terbaik. Selain itu, akan digunakan metrik ukuran jarak secara default (Minkowski Distance) pada KNeighborsRegressor dari library sklearn.
 
    kemudian apabila ditampilkan menggunkan plot sbg berikut :
-   |[<img src="/image/7.png"/>](/image/7.png)|
+   |![7](https://user-images.githubusercontent.com/84785750/205471638-835643da-3026-4148-9026-df638827078f.png)|
    |:--:| 
    | *Gambar 7. Visualisasi Nilai K terhadap MSE.* |
    Berdasarkan plot tersebut Nilai K = 2 menghasilkan MSE paling kecil
@@ -288,7 +289,7 @@ Kelebihan algoritma Random Forest adalah menggunakan teknik Bagging yang berusah
    |Test MSE|3.255506|3.32484|
 
 kemudian apabila ditampilkan menggunkan plot sbg berikut :
-   |[<img src="/image/8.png"/>](/image/8.png)|
+   |![8](https://user-images.githubusercontent.com/84785750/205471655-ab054542-3b70-415b-b1ef-f764eef0af0b.png)|
    |:--:| 
    | *Gambar 8. Bar Chart Hasil Evaluasi Model dengan Data Latih dan Uji.* |
    Dari gambar di atas, terlihat bahwa, model RandomForest memberikan nilai eror (MSE) yang paling kecil. Sedangkan model algoritma KNN memiliki eror yang paling besar dan model RandomForest akan dipertimbangkan untuk memprediksi suatu match nantinya.
@@ -301,24 +302,26 @@ Pada tahapan evaluasi ini pemodelan dengan menggunakan *Random Forest* diukur ki
 ### 6.2.a. **Confusion Matrix**
 
 - Hasil pembuatan *confusion matrix* dari perbandingan antara keluaran riil dari Nilai Y (team_1 score) dengan keluaran prediktif Nilai X (team_1 score) adalah sebagai berikut:
-|[<img src="/image/9.png"/>](/image/9.png)|
+|![9](https://user-images.githubusercontent.com/84785750/205471660-7157982c-0455-4712-a53d-085ef9f6ebb6.png)|
 |:--:| 
 | *Gambar 9. Confusion Matrix untuk home team.* |
 terlihat hasil *confusion matrix* tersebut memprediksi skor imbang lebih dominan dan juga untuk kemenangan skor margin kecil melawan away team lebih terlihat
 
 - Hasil pembuatan *confusion matrix* dari perbandingan antara keluaran riil dari Nilai Y (team_2 score) dengan keluaran prediktif Nilai X (team_2 score) adalah sebagai berikut:
 
-|[<img src="/image/10.png"/>](/image/10.png)|
+|![10](https://user-images.githubusercontent.com/84785750/205471661-b29bf1e8-18f2-4368-89c7-c0d7528a269d.png)|
 |:--:| 
 | *Gambar 10. Confusion Matrix untuk home team.* |
 terlihat hasil *confusion matrix* tersebut memprediksi skor imbang lebih dominan dan juga untuk kemenangan skor margin kecil melawan home team lebih terlihat
 
 
-|[<img src="/image/11.png"/>](/image/11.png)|
+|![11](https://user-images.githubusercontent.com/84785750/205471671-ab6fa2e7-2303-4adc-ab30-2694b9e4a3d1.png)
+|
 |:--:| 
 | *Gambar 11. Memprediksi pertandingan antara USA vs Netherlands pada stadion Qatar.* |
 
-|[<img src="/image/12.png"/>](/image/12.png)|
+|![12](https://user-images.githubusercontent.com/84785750/205471676-26458ada-a0db-4b58-ac35-3468f37297ad.png)
+|
 |:--:| 
 | *Gambar 12. Hasil ertandingan antara USA vs Netherlands pada stadion Qatar.* |
 
@@ -327,7 +330,10 @@ terlihat hasil *confusion matrix* tersebut memprediksi skor imbang lebih dominan
 
 
 
-
+## 8. Referensi
+[1]
+[2]
+[3]
 
 
 
