@@ -331,9 +331,9 @@ terlihat hasil *confusion matrix* tersebut memprediksi skor imbang lebih dominan
 
 
 ## 8. Referensi
-[1]
-[2]
-[3]
+[1]https://www.bbc.com/sport/football/24354124
+[2]https://id.wikipedia.org/wiki/Peringkat_Dunia_FIFA
+
 
 
 
