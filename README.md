@@ -332,6 +332,9 @@ terlihat hasil *confusion matrix* tersebut memprediksi skor imbang lebih dominan
 
 
 
+![12](https://user-images.githubusercontent.com/84785750/205471514-e0a3340c-772c-4e9d-8a40-a96d6a268a9c.png)
+
+
 
 
 
